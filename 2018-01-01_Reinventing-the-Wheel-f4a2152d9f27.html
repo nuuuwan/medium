@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Reinventing the Wheel</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Reinventing the Wheel</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+I write code. And so often when I write code, I’m compelled almost instinctively to re-write code that already exists. Suppose I need to…
+</section>
+<section data-field="body" class="e-content">
+<section name="9f1b" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="a0ed" id="a0ed" class="graf graf--h3 graf--leading graf--title">Reinventing the Wheel</h3><figure name="bcc3" id="bcc3" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*uelROBkMlKDIomBaa1kK9w.jpeg" data-width="3508" data-height="2480" src="https://cdn-images-1.medium.com/max/800/1*uelROBkMlKDIomBaa1kK9w.jpeg"></figure><p name="b754" id="b754" class="graf graf--p graf-after--figure">I write code. And so often when I write code, I’m compelled almost instinctively to re-write code that already exists. Suppose I need to extract some text from a PDF. There is a wide range of software which can do this well. But my first instinct is to try and rewrite this software from scratch.</p><p name="2890" id="2890" class="graf graf--p graf-after--p">While some of my fellow computer scientists, software engineers and coders are surprised, sometimes even critical of this behavior, others have confessed to being tempted to do the same thing.</p><h3 name="05a3" id="05a3" class="graf graf--h3 graf-after--p">Problem</h3><p name="32fc" id="32fc" class="graf graf--p graf-after--h3">I’ve been reflecting on why I do this, and there are a couple of explanations.</p><p name="1be2" id="1be2" class="graf graf--p graf-after--p">1. <strong class="markup--strong markup--p-strong">Understanding</strong>. Rather than understand how the 3rd party code works, I’m tended to write my own code so that (at least in theory), I’m guaranteed to understand the code. The cost of writing an application from scratch is almost always greater than the cost of reading through the 3rd Party code and understanding it — but irrationally, this doesn’t seem to factor in.</p><p name="5ec0" id="5ec0" class="graf graf--p graf-after--p">2. <strong class="markup--strong markup--p-strong">Security</strong>. This is a special case of understanding, where I’m worried about the question, “will this code behave in some strange way?”</p><p name="0f94" id="0f94" class="graf graf--p graf-after--p">3. <strong class="markup--strong markup--p-strong">Code Quality</strong>. I’d like to write code and maintain its quality in a certain way. This is as much about format and style, as it is about quality. Any new code will just pollute my code base. Hence, rather than take pains to merge something new into my code, I re-write.</p><p name="92b8" id="92b8" class="graf graf--p graf-after--p">4. <strong class="markup--strong markup--p-strong">Control</strong>. If I write this code from scratch, I’ll be able to modify it, and control it more effectively. Particularly for open source libraries, this is also a combination of 1) and 3).</p><p name="b78e" id="b78e" class="graf graf--p graf-after--p">I’ve considered the following solutions to my problems.</p><h3 name="8fcc" id="8fcc" class="graf graf--h3 graf-after--p">Solution</h3><p name="500d" id="500d" class="graf graf--p graf-after--h3">1. <strong class="markup--strong markup--p-strong">Understanding</strong>. Writing code is a laborious way of understanding it. A process that takes so much longer than reading the code. However, it not completely without advantage. Writing is an active activity, while reading can be more passive. Hence, making code reading more active will help with understanding. I often make extensive notes of the 3rd party code base, often drawing charts and diagrams.</p><p name="8cbf" id="8cbf" class="graf graf--p graf-after--p">2. <strong class="markup--strong markup--p-strong">Security</strong>. This is a legitimate question, but most 3rd party software is likely to be as secure as some proprietary software we seldom question (like Mac OSX which I’m writing on my personal computer right now).</p><p name="3e84" id="3e84" class="graf graf--p graf-after--p">3. <strong class="markup--strong markup--p-strong">Code Quality</strong>. If the style, format and quality of the 3rd party software is significantly out of sync with my own code base, I would wrap it in a wrapper library, which will make its interface look more like what I’d expect.</p><p name="692c" id="692c" class="graf graf--p graf-after--p graf--trailing">4. <strong class="markup--strong markup--p-strong">Control</strong>. My “hacks” for understanding help here. Additionally, I try to think of ways in which I can extend and modify the 3rd party software — forcing me to think of ways in which I can control and exploit the code.</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@nuwans" class="p-author h-card">Nuwan I. Senaratna</a> on <a href="https://medium.com/p/f4a2152d9f27"><time class="dt-published" datetime="2018-01-01T20:00:09.083Z">January 1, 2018</time></a>.</p><p><a href="https://medium.com/@nuwans/reinventing-the-wheel-f4a2152d9f27" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on April 4, 2021.</p></footer></article></body></html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Monkey Business</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Monkey Business</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+2019 Sri Lanka Presidential Elections
+</section>
+<section data-field="body" class="e-content">
+<section name="0c4e" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="af2b" id="af2b" class="graf graf--h3 graf--leading graf--title">Monkey Business</h3><h4 name="6ff6" id="6ff6" class="graf graf--h4 graf-after--h3 graf--subtitle">2019 Sri Lanka Presidential Elections</h4><p name="5e12" id="5e12" class="graf graf--p graf-after--h4">During the lead up to the 2019 Sri Lankan Presidential Election, many tried to predict the outcome. Some even emailed me detailed “analyses” on how they arrived at their conclusions.</p><p name="d7c8" id="d7c8" class="graf graf--p graf-after--p">Here are predictions from 11 “human” “experts”. For clarity, I only include their forecast for the winning SLPP.</p><figure name="bf28" id="bf28" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*p5Ly1h_BR_rz26kZ8c__hA.png" data-width="2378" data-height="1126" src="https://cdn-images-1.medium.com/max/800/1*p5Ly1h_BR_rz26kZ8c__hA.png"></figure><p name="cc11" id="cc11" class="graf graf--p graf-after--figure">Some asked me to “evaluate” their predictions. Had they got it right?</p><p name="f38a" id="f38a" class="graf graf--p graf-after--p">In almost all cases, the key numbers were derived from opinion and assumptions. For example, <strong class="markup--strong markup--p-strong">“80% of SLFP supporters would vote for the SLPP”</strong>, where the number was not derived from a survey of SLFP supporters, but purely the author’s opinion. Hence, it was possible to dismiss analyses purely qualitatively. Without even looking at the numbers.</p><p name="c144" id="c144" class="graf graf--p graf-after--p">However, a few analyses came up with predictions reasonably close to the final result. And a couple of the authors sent <strong class="markup--strong markup--p-strong">“Hey! You pooh-poohed me. But I got it right. I’m a genius”</strong>-type, self-congratulatory emails.</p><p name="a9fb" id="a9fb" class="graf graf--p graf-after--p">Now, you might correctly point out that a few “experts” got lucky. But can we prove it? Can we separate the humans from the monkeys?</p><h3 name="103b" id="103b" class="graf graf--h3 graf-after--p">The Monkey Test (Part 1)</h3><p name="19de" id="19de" class="graf graf--p graf-after--h3">Can we design a statistical test to answer the question, “Is the expert actually an expert, or a monkey?”</p><p name="2561" id="2561" class="graf graf--p graf-after--p">In statistics-speak, “The expert is a monkey” is known as the “Null-Hypothesis”. “The expert is an expert” is known as the “Alternative Hypothesis”.</p><p name="5ada" id="5ada" class="graf graf--p graf-after--p">The test begins by asking the question, <strong class="markup--strong markup--p-strong">“Could the predictions have come from a bunch of monkeys?”</strong></p><p name="629f" id="629f" class="graf graf--p graf-after--p">So, I went off to Dehiwala Zoo. And asked in an assortment of apes to fill in a questionnaire with their predictions. Compensating each participant with a <a href="https://roar.media/english/life/food/banana-nation-comprehensive-guide-sri-lankan-bananas/" data-href="https://roar.media/english/life/food/banana-nation-comprehensive-guide-sri-lankan-bananas/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Kolikuttu</a>.</p><p name="68fa" id="68fa" class="graf graf--p graf-after--p">Actually, I made that bit up. The Zoo was closed. And I’m not sure if the apes would have corporated, even for Kolikuttus. So, I “simulated” a monkey.</p><p name="724a" id="724a" class="graf graf--p graf-after--p">In <a href="https://medium.com/on-politics/floating-voter-9bf7fa53454d" data-href="https://medium.com/on-politics/floating-voter-9bf7fa53454d" class="markup--anchor markup--p-anchor" target="_blank">On Floating Voters</a>, I speculated that the SLPP should get between 44% and 61% of the vote. So, I wrote a bit of code that randomly picks a number between 44% and 61%.</p><pre name="e0b8" id="e0b8" class="graf graf--pre graf-after--p">import random<br>for i in range(0, 100): <br>  print([0.44 + 0.17 * random.random())</pre><p name="12e7" id="12e7" class="graf graf--p graf-after--pre">The 100 “monkey predictions” were as follows (sorted in increasing order):</p><figure name="11cf" id="11cf" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*hUT0WDvzv4H0gCcyYxJtJQ.png" data-width="1992" data-height="1008" src="https://cdn-images-1.medium.com/max/800/1*hUT0WDvzv4H0gCcyYxJtJQ.png"></figure><p name="6f29" id="6f29" class="graf graf--p graf-after--figure">Here are the absolute errors for the predictions.</p><figure name="ee08" id="ee08" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*Am6duTHIiKj6DfR7MwDjzg.png" data-width="2374" data-height="1120" src="https://cdn-images-1.medium.com/max/800/1*Am6duTHIiKj6DfR7MwDjzg.png"></figure><p name="ca0b" id="ca0b" class="graf graf--p graf-after--figure">One monkey (red) predicted 52.19% for the SLPP, just 0.6% from the actual 52.25% that the SLPP got. Nine other monkeys (orange), arrived within 1%, and 12 others within 2%.</p><h3 name="d5f0" id="d5f0" class="graf graf--h3 graf-after--p">The Monkey Test (Part 2)</h3><p name="b32c" id="b32c" class="graf graf--p graf-after--h3">Now, back to our Null and Alternative Hypotheses.</p><p name="ae1f" id="ae1f" class="graf graf--p graf-after--p">If a random man claims to be able to predict the election, it is natural to be sceptical. The chances are that he is a monkey. So we bias towards the Null Hypothesis. We ask<strong class="markup--strong markup--p-strong"> “What is the probability that what this man says could have been said by a Monkey?”</strong>. And if this probability is not smaller than a small number (say 5% or 10%), then we conclude that the man is a monkey. In statistics speak, this is called <a href="https://en.wikipedia.org/wiki/Statistical_hypothesis_testing" data-href="https://en.wikipedia.org/wiki/Statistical_hypothesis_testing" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">“Hypothesis Testing”</a>.</p><p name="a7b1" id="a7b1" class="graf graf--p graf-after--p">For example, 10 of our 100 monkeys got within 1% of the final result. So, if our random man’s predictions are off my more than 1%, we’ll have to conclude that he is a monkey. Or more formally, <strong class="markup--strong markup--p-strong">“There is no evidence, at a 10% significance level, to conclude that the man is not a monkey”.</strong></p><p name="c9f6" id="c9f6" class="graf graf--p graf-after--p">So, how did our “experts” do?</p><figure name="032f" id="032f" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*koP9AYS8CPwVa5OokXrslQ.png" data-width="2406" data-height="1098" src="https://cdn-images-1.medium.com/max/800/1*koP9AYS8CPwVa5OokXrslQ.png"></figure><p name="da2b" id="da2b" class="graf graf--p graf-after--figure">Of our 11 experts, only one predicted within 1% of the final result. Hence, we could conclude that “There is no evidence, at a 10% significance level, to conclude that any of the other 10 are not monkeys”.</p><p name="f3d2" id="f3d2" class="graf graf--p graf-after--p">Actually, 5% significance is more common in statistical analyses than 10%. Hence, we could probably conclude that “There is no evidence, at a 5% significance level, to conclude that any of our experts are not monkeys”.</p><h3 name="055b" id="055b" class="graf graf--h3 graf-after--p">Concluding suggestions</h3><p name="8eb2" id="8eb2" class="graf graf--p graf-after--h3">You might retort, “Can <em class="markup--em markup--p-em">any</em> human expert prove that they are not a monkey? 1% is too hard”.</p><p name="b1ef" id="b1ef" class="graf graf--p graf-after--p">And of course, you’re right. It is tough to predict elections accurately. If there was one point I tried to make in my pre-election articles, it was this point. An accurate prediction requires a lot of data and a lot of hard work.</p><p name="ec11" id="ec11" class="graf graf--p graf-after--p">On the other hand, it is quite easy to guess and get lucky. As we saw, some of our monkeys were a lot luckier than many of our experts. <strong class="markup--strong markup--p-strong">Hence, you have to prove that you did not get lucky.</strong></p><p name="b81c" id="b81c" class="graf graf--p graf-after--p">How do you do that?</p><ul class="postList"><li name="5bda" id="5bda" class="graf graf--li graf-after--p">Prove that you have data. Like wide-ranging surveys from many people.</li><li name="2b15" id="2b15" class="graf graf--li graf-after--li">Prove that you have done this in the past, and have got it right.</li><li name="fd4c" id="fd4c" class="graf graf--li graf-after--li">Prove that you have #SkinInTheGame. What you have to lose if you get your prediction wrong</li></ul><figure name="8e0c" id="8e0c" class="graf graf--figure graf-after--li"><img class="graf-image" data-image-id="1*tgf8z6t-jmgbTaZDmGdhMA.jpeg" data-width="634" data-height="423" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*tgf8z6t-jmgbTaZDmGdhMA.jpeg"></figure><p name="b99d" id="b99d" class="graf graf--p graf-after--figure graf--trailing">Kolikuttu, anyone?</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@nuwans" class="p-author h-card">Nuwan I. Senaratna</a> on <a href="https://medium.com/p/d649841f221e"><time class="dt-published" datetime="2019-11-25T04:24:54.619Z">November 25, 2019</time></a>.</p><p><a href="https://medium.com/@nuwans/monkey-business-d649841f221e" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on April 4, 2021.</p></footer></article></body></html>

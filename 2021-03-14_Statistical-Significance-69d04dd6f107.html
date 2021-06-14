@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Statistical Significance</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Statistical Significance</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Yet another layperson’s guide
+</section>
+<section data-field="body" class="e-content">
+<section name="4582" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="2a0e" id="2a0e" class="graf graf--h3 graf--leading graf--title">Statistical Significance</h3><h4 name="f081" id="f081" class="graf graf--h4 graf-after--h3 graf--subtitle">Yet another layperson’s guide</h4><p name="bafc" id="bafc" class="graf graf--p graf-after--h4">Imagine if everyone in the medical profession had no idea what temperature and its consequences meant. Ignorance of such a fundamental concept would result in confussion and carnage. Statistical Significance is like temperature, but significantly more significant and consequential. Not just consequential to the medical profession, but to anyone or any profession doing experiments, making claims on data, and or theorizing.</p><p name="06c6" id="06c6" class="graf graf--p graf-after--p">I have written and talked about Statistical Significance often. And to many, I might be preaching to a choir. But when something is important, there is no harm repeating it. So here goes: This article is yet another attempt at a laypersons guide to Statistical Significance.</p><h3 name="b2be" id="b2be" class="graf graf--h3 graf-after--p">Superpowers</h3><p name="abd9" id="abd9" class="graf graf--p graf--startsWithDoubleQuote graf-after--h3">“I have a superpower”, suppose I tell you.</p><p name="ba46" id="ba46" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“What superpower?” you say doubtfully.</p><p name="2977" id="2977" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“I can predict the future.”, I say.</p><p name="bf4e" id="bf4e" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“The future? Like what the price of bitcoin will be in a week?”</p><p name="8c09" id="8c09" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“Well, not quite.”, I clarify. “I can predict the future in one special case.”</p><p name="c4bb" id="c4bb" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“What special case?”</p><p name="9163" id="9163" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“Well, if you toss a coin, I can predict its outcome before you toss the coin.”</p><h3 name="b573" id="b573" class="graf graf--h3 graf-after--p">Evidence</h3><p name="ec07" id="ec07" class="graf graf--p graf--startsWithDoubleQuote graf-after--h3">“How can I believe you?” you continue, sceptically.</p><p name="65a8" id="65a8" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“Well, ask our mutual friend Amali. She tossed a coin twice last Sunday. And I was able to predict it correctly both times.”</p><p name="60a9" id="60a9" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“Really?”</p><p name="6c4f" id="6c4f" class="graf graf--p graf--startsWithDoubleQuote graf-after--p">“Yes. I said heads and then tails. And that’s what happened. Amali’s coin landed heads and then tails.”</p><h3 name="89b2" id="89b2" class="graf graf--h3 graf-after--p">Statistical Significance</h3><p name="43a6" id="43a6" class="graf graf--p graf-after--h3">The probability of guessing the outcome of a coin toss randomly, and getting it right, is 50% (assuming the coin was balanced or fair). The probability of getting it right twice is 50% x 50% or 25%. Hence, the probability that “the evidence for me having a superpower being a result of randomness” is 25%.</p><p name="bea5" id="bea5" class="graf graf--p graf-after--p">The “<strong class="markup--strong markup--p-strong">probability that the evidence was a result of randomness</strong>” is the intuitive definition of statistical Significance. For a more formal definition (involving more concepts like “Null Hypotheses”, “Alternative Hypotheses” and “P-Values”), you can read <a href="https://en.wikipedia.org/wiki/Statistical_significance" data-href="https://en.wikipedia.org/wiki/Statistical_significance" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">this excellent Wikipedia article</a> on the topic.</p><h3 name="9083" id="9083" class="graf graf--h3 graf-after--p">A step-by-step guide to using Statistical Significance</h3><ul class="postList"><li name="8bff" id="8bff" class="graf graf--li graf-after--h3">When someone makes a claim (especially dubious people like Astrologers and Economists) ask for evidence. When you get the evidence, calculate the Statistical Significance</li><li name="e52d" id="e52d" class="graf graf--li graf-after--li">If the Statistical Significance is low (say less than 5%), you can accept the claim; the chance of the evidence being a result of randomness is low.</li><li name="7b9b" id="7b9b" class="graf graf--li graf-after--li">If the statistical Significance is high (say more than 5 or 10%), take one of the following steps.</li><li name="1a1a" id="1a1a" class="graf graf--li graf-after--li">Ask for more evidence. If you get more evidence, repeat the steps.</li><li name="380a" id="380a" class="graf graf--li graf-after--li">If the claimant refuses evidence and says something like, “well, this data is not the only evidence, many other theories supported by more data also support my claim”, ask for this additional evidence and repeat the steps.</li><li name="1b2c" id="1b2c" class="graf graf--li graf-after--li">If the claimant dithers further, then summarily dismiss the claimant and the claims. Both are frauds.</li><li name="2582" id="2582" class="graf graf--li graf-after--li">Alternatively, make sure that the claimant suffers severe repercussions if their claim turns out to be false. For example, demand that they forfeit their entire consultation fee plus an additional 50% of their claim turns out to be wrong. In other words, make sure they have #SkinInTheGame.</li></ul><figure name="fb3c" id="fb3c" class="graf graf--figure graf-after--li graf--trailing"><img class="graf-image" data-image-id="1*IgmbwlLTYwpIdvV5wbg3eA.png" data-width="540" data-height="1498" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*IgmbwlLTYwpIdvV5wbg3eA.png"><figcaption class="imageCaption">Source: <a href="https://www.explainxkcd.com/wiki/index.php/882:_Significant" data-href="https://www.explainxkcd.com/wiki/index.php/882:_Significant" class="markup--anchor markup--figure-anchor" rel="nofollow noopener" target="_blank">https://www.explainxkcd.com/wiki/index.php/882:_Significant</a></figcaption></figure></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@nuwans" class="p-author h-card">Nuwan I. Senaratna</a> on <a href="https://medium.com/p/69d04dd6f107"><time class="dt-published" datetime="2021-03-14T02:27:28.534Z">March 14, 2021</time></a>.</p><p><a href="https://medium.com/@nuwans/statistical-significance-69d04dd6f107" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on April 4, 2021.</p></footer></article></body></html>

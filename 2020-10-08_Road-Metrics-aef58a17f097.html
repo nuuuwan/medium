@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Road Metrics</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Road Metrics</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+From Latency to Bandwith
+</section>
+<section data-field="body" class="e-content">
+<section name="bf08" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h4 name="4eb3" id="4eb3" class="graf graf--h4 graf--leading graf--kicker">Transport</h4><h3 name="46e2" id="46e2" class="graf graf--h3 graf-after--h4 graf--title">Road Metrics</h3><h4 name="6df8" id="6df8" class="graf graf--h4 graf-after--h3 graf--subtitle">From Latency to Bandwith</h4><h3 name="006f" id="006f" class="graf graf--h3 graf-after--h4">Simple Road Segments</h3><p name="bfe7" id="bfe7" class="graf graf--p graf-after--h3">Consider a hypothetical segment of road. Suppose this segment is short enough that all the vehicles on it move at the same speed.</p><p name="65f2" id="65f2" class="graf graf--p graf-after--p">Suppose we wanted to “measure” the “state” of this road, using various metrics. What metrics might we care about?</p><h4 name="6934" id="6934" class="graf graf--h4 graf-after--p">Distance and Speed</h4><p name="a3ee" id="a3ee" class="graf graf--p graf-after--h4">The most “well-known” metric about roads is probably distance. Or the length of the road segment. The other “well-known” metric is “speed”. Or the distance travelled in a unit time.</p><p name="59f7" id="59f7" class="graf graf--p graf-after--p">For example, if some road segment is 100m, and it takes 10s for a vehicle to move from one end to the other, the “speed” on this segment is “10 meters per second” or 10m/s. Or in more familiar units, 36 km/h.</p><h4 name="f378" id="f378" class="graf graf--h4 graf-after--p">Latency</h4><p name="0b76" id="0b76" class="graf graf--p graf-after--h4">We also care about how much time it takes to get from A to B. For the example road segment, this time or “latency” is 10s.</p><h4 name="2d36" id="2d36" class="graf graf--h4 graf-after--p">Bandwidth and Density</h4><p name="86b7" id="86b7" class="graf graf--p graf-after--h4">The “bandwidth” of a road is the number of people that can travel through in a unit time. Bandwidth depends on both speed, and how densely people can pack into the vehicle travelling on that road.</p><p name="f501" id="f501" class="graf graf--p graf-after--p">For example, a large, 10m-long bus carrying 50 people, carries 5 people/m. A 5m-long sedan, carrying 5 people, carries only 1 person/m.</p><p name="8257" id="8257" class="graf graf--p graf-after--p">If the bus were travelling at 10m/s, its bandwidth would be 50 people/s. The sedan would have a bandwidth of 10 people/s.</p><p name="696a" id="696a" class="graf graf--p graf-after--p">The number of lanes on the road, also influence bandwidth. For example, if the road had two lanes, each with a bus travelling at 10m/s, its bandwidth would be 100 people/s.</p><h3 name="5f8d" id="5f8d" class="graf graf--h3 graf-after--p">Complex Routes</h3><p name="d76a" id="d76a" class="graf graf--p graf-after--h3">In practice, road journeys happen on multiple road segments that form a complex road network. However, the metrics we care about are much the same.</p><p name="ef25" id="ef25" class="graf graf--p graf-after--p">How do the metrics for road segments, “aggregate” to form metrics for road networks?</p><h4 name="bccc" id="bccc" class="graf graf--h4 graf-after--p">Distance and Latency</h4><p name="a093" id="a093" class="graf graf--p graf-after--h4">The Distance or Latency of a route is the sum of the distances or latencies of each of its component road segments.</p><p name="d371" id="d371" class="graf graf--p graf-after--p">For example, if a route consists of two segments, the first 100m long, and the second 200m long, and with latencies of 10s and 12.5s respectively, the aggregate distance is 300s, while the aggregate latency is 22.5 seconds.</p><h4 name="c927" id="c927" class="graf graf--h4 graf-after--p">Speed</h4><p name="d6e3" id="d6e3" class="graf graf--p graf-after--h4">The speed of the route is the sum distance divided by sum latency.</p><p name="ddd0" id="ddd0" class="graf graf--p graf-after--p">In the previous example, each segment had speeds of 10m/s and 16m/s, respectively. The aggregate speed of the route is 300m / 22.5s or 13.33m/s.</p><h4 name="a16b" id="a16b" class="graf graf--h4 graf-after--p">Maximum Bandwidth</h4><p name="e313" id="e313" class="graf graf--p graf-after--h4">The maximum bandwidth of a route is the bandwidth of the segment with the lowest bandwidth.</p><p name="3b42" id="3b42" class="graf graf--p graf-after--p">In our previous example, suppose the first segment was a single-lane road, while the second segment was a three-lane highway. Also, suppose that traffic on both segments was restricted to 10m-busses. The first would have a maximum bandwidth of 50 people/s, while the second would have a maximum bandwidth of 187.5 people/s.</p><p name="2dc1" id="2dc1" class="graf graf--p graf-after--p">Now the combined route would still have a maximum bandwidth of only 50 people/s, because it would not be possible to traffic more on the first segment, regardless of the extra capacity of the second.</p><figure name="58de" id="58de" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="1*tAWPmys0DJxVFKMn38usSw.jpeg" data-width="2144" data-height="1424" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*tAWPmys0DJxVFKMn38usSw.jpeg"><figcaption class="imageCaption">Source: <a href="https://commons.wikimedia.org/wiki/File:Sri_Lanka,_Kurunegala_District,_Ibbagamuwa_%282%29.JPG" data-href="https://commons.wikimedia.org/wiki/File:Sri_Lanka,_Kurunegala_District,_Ibbagamuwa_(2).JPG" class="markup--anchor markup--figure-anchor" rel="noopener" target="_blank">Wikimedia</a></figcaption></figure></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@nuwans" class="p-author h-card">Nuwan I. Senaratna</a> on <a href="https://medium.com/p/aef58a17f097"><time class="dt-published" datetime="2020-10-08T04:08:56.163Z">October 8, 2020</time></a>.</p><p><a href="https://medium.com/@nuwans/road-metrics-aef58a17f097" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on April 4, 2021.</p></footer></article></body></html>
