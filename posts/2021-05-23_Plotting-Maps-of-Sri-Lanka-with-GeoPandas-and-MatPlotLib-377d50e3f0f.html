@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Plotting Maps of Sri Lanka with GeoPandas and MatPlotLib</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Plotting Maps of Sri Lanka with GeoPandas and MatPlotLib</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+A Simple Tutorial
+</section>
+<section data-field="body" class="e-content">
+<section name="1eb1" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="ef35" id="ef35" class="graf graf--h3 graf--leading graf--title">Plotting Maps of Sri Lanka with GeoPandas and MatPlotLib</h3><h4 name="79a8" id="79a8" class="graf graf--h4 graf-after--h3 graf--subtitle">A Simple Tutorial</h4><p name="5ed2" id="5ed2" class="graf graf--p graf-after--h4"><em class="markup--em markup--p-em">Disclaimer: This article describes a work-in-progress. Please comment on how we might improve the underlying libraries, especially what additional features you would like.</em></p><h3 name="d25e" id="d25e" class="graf graf--h3 graf-after--p">Geo-Spatial Data</h3><p name="d6cd" id="d6cd" class="graf graf--p graf-after--h3">The only real barrier to plotting maps of Sri Lanka with Python libraries <a href="https://geopandas.org" data-href="https://geopandas.org" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">GeoPandas</a> and <a href="https://matplotlib.org" data-href="https://matplotlib.org" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">MatPlotLib</a> is the difficulty of accessing geographical data for Sri Lanka. I’ve attempted to solve this problem by scraping geographical data from various sources, sharing it on <a href="https://github.com/nuuuwan/geo-data" data-href="https://github.com/nuuuwan/geo-data" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">GitHub</a>, and providing a simple python library <a href="https://pypi.org/project/geo-nuuuwan/" data-href="https://pypi.org/project/geo-nuuuwan/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">geo-nuuuwan</a> for conveniently accessing this data.</p><p name="2e9a" id="2e9a" class="graf graf--p graf-after--p">Begin by installing <a href="https://pypi.org/project/geo-nuuuwan/" data-href="https://pypi.org/project/geo-nuuuwan/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">geo-nuuuwan</a></p><pre name="63d1" id="63d1" class="graf graf--pre graf-after--p">pip install geo-nuuuwan</pre><h3 name="2eb9" id="2eb9" class="graf graf--h3 graf-after--pre">Example 1: Basic Maps</h3><p name="0f0a" id="0f0a" class="graf graf--p graf-after--h3">Module geodata in geo (<a href="https://pypi.org/project/geo-nuuuwan/" data-href="https://pypi.org/project/geo-nuuuwan/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">geo-nuuuwan</a>) implements method get_region_geodata, which returns geographical data (as a <a href="https://geopandas.org/docs/reference/geodataframe.html" data-href="https://geopandas.org/docs/reference/geodataframe.html" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">GeoPandas.GeoDataFrame</a>) for some region of Sri Lanka, split by some region.</p><p name="d771" id="d771" class="graf graf--p graf-after--p">For example, the following snippet returns geographical data for Sri Lanka split by province.</p><pre name="5df8" id="5df8" class="graf graf--pre graf-after--p">from geo import geodata<br>gpd_df = geodata.get_region_geodata(&#39;LK&#39;, &#39;province&#39;)</pre><p name="911e" id="911e" class="graf graf--p graf-after--pre">The <a href="https://geopandas.org/docs/reference/geodataframe.html" data-href="https://geopandas.org/docs/reference/geodataframe.html" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">GeoPandas.GeoDataFrame</a> can be plotted using MatPlotLib as follows:</p><pre name="1f15" id="1f15" class="graf graf--pre graf-after--p">import matplotlib.pyplot as plt<br>from geo import geodata</pre><pre name="72f4" id="72f4" class="graf graf--pre graf-after--pre">gpd_df = geodata.get_region_geodata(&#39;LK&#39;, &#39;province&#39;)<br>gpd_df.plot()</pre><pre name="99d1" id="99d1" class="graf graf--pre graf-after--pre">plt.show()</pre><p name="f941" id="f941" class="graf graf--p graf-after--pre">The result is:</p><figure name="a8b6" id="a8b6" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*_-I6L4h0_f7L-b4e9-JKLQ.png" data-width="640" data-height="480" src="https://cdn-images-1.medium.com/max/800/1*_-I6L4h0_f7L-b4e9-JKLQ.png"></figure><h3 name="0170" id="0170" class="graf graf--h3 graf-after--figure">Example 1a</h3><p name="242a" id="242a" class="graf graf--p graf-after--h3">Similarly, we can plot Colombo District (“LK-11”) by DSDs (Divisional Secretariat Divisions) with:</p><pre name="ee40" id="ee40" class="graf graf--pre graf-after--p">gpd_df = geodata.get_region_geodata(&#39;LK-11&#39;, &#39;dsd&#39;)</pre><figure name="b309" id="b309" class="graf graf--figure graf-after--pre"><img class="graf-image" data-image-id="1*4YMw52TMcWfn0tJO06wZYA.png" data-width="640" data-height="480" src="https://cdn-images-1.medium.com/max/800/1*4YMw52TMcWfn0tJO06wZYA.png"></figure><h3 name="6fd1" id="6fd1" class="graf graf--h3 graf-after--figure">Example 2: Plotting some useful data</h3><p name="8d90" id="8d90" class="graf graf--p graf-after--h3">In addition to geographical coordinates, the <a href="https://geopandas.org/docs/reference/geodataframe.html" data-href="https://geopandas.org/docs/reference/geodataframe.html" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">GeoPandas.GeoDataFrame</a> includes some additional basic data like parent regions, population and area data.</p><p name="6509" id="6509" class="graf graf--p graf-after--p">This additional data can be inspected as follows:</p><pre name="7b70" id="7b70" class="graf graf--pre graf-after--p">import matplotlib.pyplot as plt<br>from geo import geodata</pre><pre name="3c2a" id="3c2a" class="graf graf--pre graf-after--pre">gpd_df = geodata.get_region_geodata(&#39;LK&#39;, &#39;district&#39;)<br>print(gpd_df)</pre><p name="a0f2" id="a0f2" class="graf graf--p graf-after--pre">Output:</p><figure name="27b2" id="27b2" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*l6oEkw1ZCM5av6yL9qrVpw.png" data-width="2712" data-height="1098" src="https://cdn-images-1.medium.com/max/800/1*l6oEkw1ZCM5av6yL9qrVpw.png"></figure><p name="cb08" id="cb08" class="graf graf--p graf-after--figure">Using the population and area data, we can color the map by each region’s (say district’s) population density as follows:</p><pre name="fdc5" id="fdc5" class="graf graf--pre graf-after--p">gpd_df = geodata.get_region_geodata(&#39;LK&#39;, &#39;district&#39;)</pre><pre name="60a0" id="60a0" class="graf graf--pre graf-after--pre">gpd_df[&#39;density&#39;] = gpd_df[&#39;population&#39;] / gpd_df[&#39;area&#39;]<br>gpd_df.plot(column=&#39;density&#39;, legend=True, cmap=&#39;OrRd&#39;)</pre><pre name="3510" id="3510" class="graf graf--pre graf-after--pre">plt.show()</pre><figure name="4d10" id="4d10" class="graf graf--figure graf-after--pre"><img class="graf-image" data-image-id="1*c6DALweaAY3zkdzSUS7JRw.png" data-width="640" data-height="480" src="https://cdn-images-1.medium.com/max/800/1*c6DALweaAY3zkdzSUS7JRw.png"></figure><h3 name="503f" id="503f" class="graf graf--h3 graf-after--figure">Example 2a</h3><p name="ca02" id="ca02" class="graf graf--p graf-after--h3">Similarly, population density of Sri Lanka’s DSD.</p><pre name="bcb9" id="bcb9" class="graf graf--pre graf-after--p">gpd_df = geodata.get_region_geodata(&#39;LK&#39;, &#39;dsd&#39;)</pre><pre name="b045" id="b045" class="graf graf--pre graf-after--pre">gpd_df[&#39;density&#39;] = gpd_df[&#39;population&#39;] / gpd_df[&#39;area&#39;]<br>gpd_df.plot(column=&#39;density&#39;, legend=True, cmap=&#39;OrRd&#39;)</pre><pre name="8197" id="8197" class="graf graf--pre graf-after--pre">plt.show()</pre><figure name="598b" id="598b" class="graf graf--figure graf-after--pre"><img class="graf-image" data-image-id="1*ZIMDazKI7P7E1KRxSPnHOg.png" data-width="640" data-height="480" src="https://cdn-images-1.medium.com/max/800/1*ZIMDazKI7P7E1KRxSPnHOg.png"></figure><h3 name="7cc0" id="7cc0" class="graf graf--h3 graf-after--figure">Example 2b: Prettifying the Plot</h3><p name="bce2" id="bce2" class="graf graf--p graf-after--h3">We can add a title, legend, better color scheme to our plot, and resize it as follows:</p><pre name="3b5a" id="3b5a" class="graf graf--pre graf-after--p">gpd_df = geodata.get_region_geodata(&#39;LK&#39;, &#39;dsd&#39;)</pre><pre name="08dd" id="08dd" class="graf graf--pre graf-after--pre">gpd_df[&#39;density&#39;] = gpd_df[&#39;population&#39;] / gpd_df[&#39;area&#39;]</pre><pre name="41b1" id="41b1" class="graf graf--pre graf-after--pre">gpd_df.plot(<br>    column=&#39;density&#39;,</pre><pre name="676f" id="676f" class="graf graf--pre graf-after--pre">scheme=&#39;UserDefined&#39;,<br>    classification_kwds={<br>        &#39;bins&#39;: [100, 200, 400, 800],<br>    },<br>    legend=True,<br>    legend_kwds={<br>        &#39;labels&#39;: [<br>            &#39;&lt; 100&#39;,<br>            &#39;100 - 200&#39;,<br>            &#39;200 - 400&#39;,<br>            &#39;400 - 800&#39;,<br>            &#39;800 &lt;&#39;,<br>        ],<br>    },<br>    cmap=&#39;OrRd&#39;,<br>    figsize=(7, 9),<br>)<br>plt.title(&#39;Population Density of Sri Lanka by DSD&#39;)</pre><pre name="c4e6" id="c4e6" class="graf graf--pre graf-after--pre">plt.show()</pre><p name="4757" id="4757" class="graf graf--p graf-after--pre"><em class="markup--em markup--p-em">[Note, these are all GeoPandas and MatPlotLib features. Not features from geo-nuuuwan.]</em></p><figure name="37e4" id="37e4" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*sU8pcimzbq6PDqTdQb3aIA.png" data-width="700" data-height="900" src="https://cdn-images-1.medium.com/max/800/1*sU8pcimzbq6PDqTdQb3aIA.png"></figure><h3 name="0478" id="0478" class="graf graf--h3 graf-after--figure">Example 2c</h3><p name="817a" id="817a" class="graf graf--p graf-after--h3">Similarly, “Population Density of Sri Lanka by GND”:</p><pre name="79c0" id="79c0" class="graf graf--pre graf-after--p">gpd_df = geodata.get_region_geodata(&#39;LK&#39;, &#39;gnd&#39;)<br>...<br>plt.title(&#39;Population Density of Sri Lanka by GND&#39;)</pre><figure name="49c6" id="49c6" class="graf graf--figure graf-after--pre"><img class="graf-image" data-image-id="1*coK7FOTZwS_f6XEwUzHVzg.png" data-width="700" data-height="900" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*coK7FOTZwS_f6XEwUzHVzg.png"></figure><h3 name="126f" id="126f" class="graf graf--h3 graf-after--figure">Example 2d</h3><p name="01d8" id="01d8" class="graf graf--p graf-after--h3">And “Population Density of the Central Province by DSD”:</p><pre name="d1fa" id="d1fa" class="graf graf--pre graf-after--p">gpd_df = geodata.get_region_geodata(&#39;LK-2&#39;, &#39;dsd&#39;)<br>...<br>plt.title(&#39;Population Density of the Central Province by DSD&#39;)</pre><figure name="1a20" id="1a20" class="graf graf--figure graf-after--pre"><img class="graf-image" data-image-id="1*L6_JvyGAXtJI2q2eAOEfVg.png" data-width="700" data-height="900" src="https://cdn-images-1.medium.com/max/800/1*L6_JvyGAXtJI2q2eAOEfVg.png"></figure><h3 name="90ae" id="90ae" class="graf graf--h3 graf-after--figure">Coming Soon</h3><p name="b433" id="b433" class="graf graf--p graf-after--h3">The goal of this article was to introduce <a href="https://pypi.org/project/geo-nuuuwan/" data-href="https://pypi.org/project/geo-nuuuwan/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">geo-nuuuwan</a>, and plotting basic maps of Sri Lanka and its regions. In future articles, we’ll look at:</p><ul class="postList"><li name="c76f" id="c76f" class="graf graf--li graf-after--p">Plotting more elaborate data (e.g. census, election)</li><li name="5709" id="5709" class="graf graf--li graf-after--li">Plotting different types of maps and cartograms</li><li name="f65e" id="f65e" class="graf graf--li graf-after--li graf--trailing">Anything else? <strong class="markup--strong markup--li-strong">Please comment with your wishlist.</strong></li></ul></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@nuwans" class="p-author h-card">Nuwan I. Senaratna</a> on <a href="https://medium.com/p/377d50e3f0f"><time class="dt-published" datetime="2021-05-23T15:46:39.599Z">May 23, 2021</time></a>.</p><p><a href="https://medium.com/@nuwans/plotting-maps-of-sri-lanka-with-geopandas-and-matplotlib-377d50e3f0f" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on November 18, 2021.</p></footer></article></body></html>
