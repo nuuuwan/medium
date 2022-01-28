@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Antifragile Algorithms</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Antifragile Algorithms</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Or Beyond Robust Programming
+</section>
+<section data-field="body" class="e-content">
+<section name="dcb9" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="a2df" id="a2df" class="graf graf--h3 graf--leading graf--title">Antifragile Algorithms</h3><h4 name="3096" id="3096" class="graf graf--h4 graf-after--h3 graf--subtitle">Or Beyond Robust Programming</h4><p name="e9e0" id="e9e0" class="graf graf--p graf-after--h4"><em class="markup--em markup--p-em">Most algorithms a Fragile. A few are Robust. This article is how we can do even better than Robust: How we can write </em><strong class="markup--strong markup--p-strong"><em class="markup--em markup--p-em">Antifragile</em></strong><em class="markup--em markup--p-em"> algorithms.</em></p><h3 name="22ab" id="22ab" class="graf graf--h3 graf-after--p">Fragile, Robust, and Antifragile</h3><p name="812f" id="812f" class="graf graf--p graf-after--h3">In his classic book, <a href="https://en.wikipedia.org/wiki/Antifragile_%28book%29" data-href="https://en.wikipedia.org/wiki/Antifragile_(book)" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Antifragile: Things That Gain from Disorder</a>, <a href="https://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb" data-href="https://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Nassim Taleb</a> differentiates between three types of things: the <strong class="markup--strong markup--p-strong">Fragile</strong>, the <strong class="markup--strong markup--p-strong">Robust</strong>, and the <strong class="markup--strong markup--p-strong">Antifragile</strong>.</p><p name="e509" id="e509" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Fragile</strong> things suffer from even small amounts of stress or noise. For example, you are likely to label a crate of crystal glasses as “Fragile” or “Handle with care” because even a small amount of mishandling (i.e. stress or noise) will break the glasses.</p><p name="6adf" id="6adf" class="graf graf--p graf-after--p">In contrast, if you were shipping packets of salt or bars of gold, you would not label their containers “Fragile”. You’re unlikely to label anything because mishandling or not, they are likely to remain unchanged and undamaged. We refer to this quality of remaining undamaged with stresses and noise as “<strong class="markup--strong markup--p-strong">Robustness</strong>”.</p><p name="d5bc" id="d5bc" class="graf graf--p graf-after--p">You might say “Robustness” is the opposite of “Fragile”. But this is like saying the opposite of “negative” is “zero”, or the opposite of losing money is “not losing money”.</p><p name="e9a2" id="e9a2" class="graf graf--p graf-after--p">The opposite of “negative” is “positive”, and the opposite of “losing money” is gaining money. Similarly, the opposite of becoming damaged in the face of small stresses is <em class="markup--em markup--p-em">improving</em> in the face of small stresses. If you were transporting some good (I don’t know what), which was <strong class="markup--strong markup--p-strong">Antifragile</strong>, you would mark the crate “Please handle carelessly”.</p><p name="7af0" id="7af0" class="graf graf--p graf-after--p">Now, what if <strong class="markup--strong markup--p-strong">Algorithms</strong> could be <strong class="markup--strong markup--p-strong">Antifragile</strong>?</p><h3 name="f05c" id="f05c" class="graf graf--h3 graf-after--p">Fragile Algorithms</h3><p name="0ac9" id="0ac9" class="graf graf--p graf-after--h3">Suppose you wanted to scrape a news article from the newspaper’s website. Suppose you built a very simple scrape that identified the title of the article and the body of the article.</p><p name="205f" id="205f" class="graf graf--p graf-after--p">Suppose an <code class="markup--code markup--p-code">h1</code> HTML tag always contained the title, a <code class="markup--code markup--p-code">p</code> HTML tag contained the body, and there was no other content with these tags.</p><pre name="d8f2" id="d8f2" class="graf graf--pre graf-after--p">&lt;h1&gt;Another Gas Explosion in Fartington City&lt;/h1&gt;<br>&lt;p&gt;Our Fartington correspondent reports that yet another…&lt;/p&gt;</pre><p name="3f23" id="3f23" class="graf graf--p graf-after--pre">To find the title and body, you need to find the <code class="markup--code markup--p-code">h1</code> and <code class="markup--code markup--p-code">p</code> tags. If you used BeautifulSoup for parsing HTML, your code would look something like this:</p><pre name="ccd0" id="ccd0" class="graf graf--pre graf-after--p">soup = BeautifulSoup(html, ‘html.parser’)<br>article_title = soup.find(‘h1’)<br>article_body = soup.find(‘p’)</pre><p name="f138" id="f138" class="graf graf--p graf-after--pre">This parser is simple, which is good. But it is also Fragile; a very small stress or noise will break or deteriorate it.</p><p name="909e" id="909e" class="graf graf--p graf-after--p">What is a small stress or noise in the Algorithms world? A small change that will break the algorithm. For example, what if the designer of the news site replaces the h1 tag of the title with a different tag?</p><pre name="7131" id="7131" class="graf graf--pre graf-after--p">&lt;div class=”div-article-heading”&gt;<br>   Another Gas Explosion in Fartington City<br>&lt;/div&gt;</pre><p name="c92a" id="c92a" class="graf graf--p graf-after--pre">You might also confront this stress if you use the same algorithm to crawl a different news site.</p><h3 name="2b62" id="2b62" class="graf graf--h3 graf-after--p">Robust Algorithms</h3><p name="25f5" id="25f5" class="graf graf--p graf-after--h3">A simple way of making your crawling algorithm more robust would be to look for different patterns of potential headings. For example, you could do something like,</p><pre name="3365" id="3365" class="graf graf--pre graf-after--p">title = soup.find(‘h1’)<br>if not title:<br>    title = soup.find(‘div’, class_=’div-article-heading’):</pre><p name="d7ae" id="d7ae" class="graf graf--p graf-after--pre">You can make your algorithm even more robust by detecting the title in some more generic way. For example, you could detect the font size and weight of the various text types and determine that the “title” was the biggest and boldest.</p><p name="ca24" id="ca24" class="graf graf--p graf-after--p">As I hinted, this algorithm is more robust. The algorithm doesn’t break or deteriorate with noise and stress (i.e. changes to the article format).</p><h3 name="c9ad" id="c9ad" class="graf graf--h3 graf-after--p">Antifragile Algorithms</h3><p name="71ba" id="71ba" class="graf graf--p graf-after--h3">But what if we could do even better? What if our algorithm improved with noise and stress? What if there existed a news article parsing algorithm that got better as it parsed more and more various and different news sites?</p><p name="7bc7" id="7bc7" class="graf graf--p graf-after--p">Some might suggest a <a href="https://en.wikipedia.org/wiki/Supervised_learning" data-href="https://en.wikipedia.org/wiki/Supervised_learning" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Supervised Learning</a> Algorithm, where you input many examples of news websites, along with their titles and bodies. The algorithm would learn to parse the title and body and get better with more and more examples. In this sense, this Supervised Learning Algorithm is Antifragile.</p><p name="a66f" id="a66f" class="graf graf--p graf-after--p">However, Supervised Learning is, in a sense, cheating because you are “helping” it with training data, a benefit that our other algorithms didn’t have. On the other hand, an <a href="https://en.wikipedia.org/wiki/Unsupervised_learning" data-href="https://en.wikipedia.org/wiki/Unsupervised_learning" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Unsupervised Learning Algorithm</a> could be both Antifragile and work without help.</p><p name="dbde" id="dbde" class="graf graf--p graf-after--p">Here’s a very broad outline of what it might look like:</p><pre name="c334" id="c334" class="graf graf--pre graf-after--p">for many articles:<br>    find various types of text found in that article<br>for these various types of text:<br>    exclude common text like links and other generic items<br>    find “title-like” text<br>    find “body-like” text</pre><figure name="9e93" id="9e93" class="graf graf--figure graf-after--pre"><img class="graf-image" data-image-id="1*ywt285wmOf3wPPJYvzp_pw.png" data-width="2207" data-height="1290" src="https://cdn-images-1.medium.com/max/800/1*ywt285wmOf3wPPJYvzp_pw.png"></figure><h3 name="7270" id="7270" class="graf graf--h3 graf-after--figure">Concluding Generalizations</h3><p name="6ce5" id="6ce5" class="graf graf--p graf-after--h3 graf--trailing">In many situations, designing Antifragile products or systems is difficult and counter-intuitive. However, in some situations (like News Article Crawling), we often write Fragile algorithms because it is easy, and because we don’t think “Antifragile first”. In general, we (programmers) should look for the Antifragile option first.</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@nuwans" class="p-author h-card">Nuwan I. Senaratna</a> on <a href="https://medium.com/p/8dc1efd74048"><time class="dt-published" datetime="2021-12-06T05:52:46.268Z">December 6, 2021</time></a>.</p><p><a href="https://medium.com/@nuwans/antifragile-algorithms-8dc1efd74048" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on January 28, 2022.</p></footer></article></body></html>
