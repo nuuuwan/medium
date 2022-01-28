@@ -1,0 +1,13 @@
+#### Article 282 · October 12, 2020
+
+# The Solutionist
+
+And so the piper played his pipe,While all the rats did chase the tones,As people watched, the fruits were ripe,On trees that housed those swarms of dronesDid chase the tones, and end as bones...
+
+And as the creatures headlong fellTo icy waters, currents coldThe men at work would dig the wellInto which the cat dropped, brave and boldCurrents cold and fears untold...
+
+And so the solutionist posed his query,Answer this and you will know,The question is the one to bury,Ask it now. Unlike beforeYou will know,and so much more...
+
+...
+
+Originally published on Facebook, May 2010

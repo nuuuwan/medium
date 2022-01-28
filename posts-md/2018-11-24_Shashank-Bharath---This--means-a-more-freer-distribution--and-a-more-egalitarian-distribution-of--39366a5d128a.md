@@ -1,0 +1,3 @@
+#### Article 13 · November 24, 2018
+
+Shashank Bharath: "This" means a more freer distribution, and a more egalitarian distribution of data. One important shift with decentralized apps is that data could be stored, owned or controlled by the original owner. This gives the owner more control on data — and leads to a more equitable distribution. See https://medium.com/@timberners_lee/one-small-step-for-the-web-87f92217d085 for more details.
